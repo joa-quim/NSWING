@@ -2165,7 +2165,7 @@ LoopKabas:		/* When computing a grid of Kabas we use a GOTO to simulate a loop. 
 	if (workMax) mxFree (workMax);
 	if (work) mxFree (work);
 	if (mareg_names) {
-		for (k = 0; k < n_mareg; k++) mxFree(mareg_names[k]);
+		for (k = 0; k < n_mareg; k++) free(mareg_names[k]);	/* They were allocated with strdup() */
 		mxFree(mareg_names);
 	}
 
